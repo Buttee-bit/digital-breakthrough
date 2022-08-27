@@ -1,5 +1,5 @@
 export const homeObjOne = {
-    id: 'start',
+    id: 'aa',
     lightBg: true,
     lightText: false,
     lightTextDesc: false,
