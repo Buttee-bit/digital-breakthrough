@@ -1,10 +1,11 @@
-import { FileUploader } from './components/FileUploader/index'
+import Home from './pages';
+import { BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <FileUploader />
-    </div>
+    <Router>
+      <Home />
+    </Router>
   );
 }
 
