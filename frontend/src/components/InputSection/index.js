@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { InputBtnWrapper, InputContainer, InputContent, InputH1, InputP, Button, Input } from './InputElements'
+import React, { useState, useEffect } from 'react'
+import { InputBtnWrapper, InputContainer, InputContent, InputP, Input, Button } from './InputElements'
 import axios from 'axios'
 
 const InputSection = () => {
@@ -24,16 +24,39 @@ const InputSection = () => {
             })
     }
 
+    const [data, setData] = useState();
+    const [isLoading, setIsLoading] = useState(false);
+    const [err, setErr] = useState('');
+
+    const handleClick = async () => {
+        setIsLoading(true);
+        try {
+            const { data } = await axios.get(
+                'http://127.0.0.1:5000/predict',
+            );
+
+            console.log(JSON.stringify(data, null, 4));
+
+            setData(data);
+        } catch (err) {
+            setErr(err.message);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    console.log(data);
+
     return (
         <InputContainer id='start'>
             <InputContent>
-                <InputH1>Юридический помощник для проверки НПА</InputH1>
                 <InputP>
                     Загрузите файл с расширением .doc, .docx
                 </InputP>
-                <InputBtnWrapper method="post" action="" onSubmit={onSubmit}>
-                    <Input type="file" onChange={onInputChange}/>
-                    <Button>Загрузить файл</Button>
+                <InputBtnWrapper method="post" onSubmit={onSubmit}>
+                    <Input type="file" onChange={onInputChange} />
+                    {isLoading && <h2>Loading...</h2>}
+                    <Button onClick={handleClick}>Загрузить файл</Button>
                 </InputBtnWrapper>
             </InputContent>
         </InputContainer >

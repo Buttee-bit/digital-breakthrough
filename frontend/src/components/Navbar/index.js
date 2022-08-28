@@ -43,14 +43,14 @@ const Navbar = ({ toggle} ) => {
                 Начало работы</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='info'
+              <NavLinks to='output'
                 smooth={true}
                 duration={500}
                 spy={true}
                 exact='true'
                 offset={-80}
               >
-                Информация</NavLinks>
+                Результат</NavLinks>
             </NavItem>
           </NavMenu>
         </NavbarContainer>

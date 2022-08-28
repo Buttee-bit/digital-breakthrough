@@ -1,28 +1,7 @@
 import styled from "styled-components";
 
-export const Input = styled.input`
-    border-radius: 50px;
-    background: ${({primary}) => (primary ? '#06CCFF' : '#010606')};
-    white-space: nowrap;
-    padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
-    color: ${({dark}) => (dark ? '#010606' : '#fff')};
-    font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
-    outline: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-        transition: all 0.2s ease-in-out;
-         background: ${({primary}) => (primary ? '#fff' : '#06CCFF')};;
-    }
-`
-
 export const InputContainer = styled.div`
-    background: #0c0c0c;
+    background: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,26 +9,6 @@ export const InputContainer = styled.div`
     height: 800px;
     position: relative;
     z-index: 1;
-
-    :before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(
-            180deg, 
-            rgba(0,0,0,0.2) 0%, 
-            rgba(0,0,0,0.6) 100%
-        ), 
-        linear-gradient(
-            180deg, 
-            rgba(0,0,0,0.2) 0%, 
-            transparent
-        );
-        z-index: 2;
-    }
 `;
 
 export const InputContent = styled.div`
@@ -78,7 +37,7 @@ export const InputH1 = styled.h1`
 
 export const InputP = styled.p`
     margin-top: 24px;
-    color: #fff;
+    color: #000;
     font-size: 24px;
     text-align: center;
     max-width: 600px;
@@ -101,11 +60,11 @@ export const InputBtnWrapper = styled.form`
 
 export const Button = styled.button`
     border-radius: 50px;
-    background: ${({primary}) => (primary ? '#06CCFF' : '#010606')};
+    background: ${({ primary }) => (primary ? '#06CCFF' : '#010606')};
     white-space: nowrap;
-    padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
-    color: ${({dark}) => (dark ? '#010606' : '#fff')};
-    font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
+    padding: ${({ big }) => (big ? '14px 48px' : '12px 30px')};
+    color: ${({ dark }) => (dark ? '#010606' : '#fff')};
+    font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
     outline: none;
     border: none;
     cursor: pointer;
@@ -114,8 +73,31 @@ export const Button = styled.button`
     align-items: center;
     transition: all 0.2s ease-in-out;
 
+
     &:hover {
         transition: all 0.2s ease-in-out;
-         background: ${({primary}) => (primary ? '#fff' : '#06CCFF')};;
+         background: ${({ primary }) => (primary ? '#fff' : '#06CCFF')};;
+    }
+`
+
+export const Input = styled.input`
+    border-radius: 50px;
+    background: ${({ primary }) => (primary ? '#06CCFF' : '#010606')};
+    white-space: nowrap;
+    padding: ${({ big }) => (big ? '14px 48px' : '12px 30px')};
+    color: ${({ dark }) => (dark ? '#010606' : '#fff')};
+    font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 10px;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+         background: ${({ primary }) => (primary ? '#fff' : '#06CCFF')};;
     }
 `

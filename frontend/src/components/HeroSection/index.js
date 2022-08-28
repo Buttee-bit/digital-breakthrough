@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper, ArrowForward, ArrowRight } from './HeroElements'
+import { HeroContainer, HeroBg, VideoBg, HeroContent, HeroH1, HeroBtnWrapper, ArrowForward, ArrowRight } from './HeroElements'
 import Video from './../../videos/video.mp4'
 import { Button } from './../ButtonElement'
 
@@ -33,9 +33,6 @@ const HeroSection = () => {
             </HeroBg>
             <HeroContent>
                 <HeroH1>Юридический помощник для проверки НПА</HeroH1>
-                <HeroP>
-                    Загрузите файл с расширением .doc, .docx
-                </HeroP>
                 <HeroBtnWrapper scrollNav={scrollNav}>
                     <Button to='start' onMouseEnter={onHover} onMouseLeave={onHover}
                         smooth={true}
